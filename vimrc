@@ -103,7 +103,7 @@ let g:ctrlp_cmd = 'CtrlP'
 set laststatus=2
 
 " Tagbar
-nmap <LocalLeader>o :TagbarToggle<CR>
+nmap <LocalLeader>d :TagbarToggle<CR>
 
 " toggle paste mode
 nmap <LocalLeader>pp :set paste!<cr>
