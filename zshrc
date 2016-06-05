@@ -47,5 +47,5 @@ preexec_functions+='preexec_update_git_vars'
 precmd_functions+='precmd_update_git_vars'
 chpwd_functions+='chpwd_update_git_vars'
 
-PROMPT=$'%{${fg[white]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
+PROMPT=$'%{${fg[white]}%}$(get_pwd)%b$(prompt_git_info)%{${fg[default]}%} '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
