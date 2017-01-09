@@ -9,6 +9,11 @@ ZSH_THEME="robbyrussell"
 
 plugins=(git)
 
+# go-install <name of src to install>
+go-install(){
+  docker run --rm -v $PWD:/usr/src -w /usr/src -e GOPATH=/usr/src -e GOOS=darwin golang:latest go install -v $1
+}
+
 pull-ansible-subtree(){
   git subtree pull --prefix=$1/ansible --squash shared-ansible master
 }
