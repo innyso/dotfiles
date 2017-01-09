@@ -30,6 +30,9 @@ source $ZSH/oh-my-zsh.sh
 
 alias code="~/code"
 alias doc="~/Documents"
+alias dk=docker
+alias dc=docker-compose
+alias kbl=kubectl
 
 # Initialize colors.
 autoload -U colors
