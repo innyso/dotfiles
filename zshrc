@@ -7,7 +7,10 @@ export ZSH=/Users/iso/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-plugins=(git)
+plugins=(
+  git
+  zsh-syntax-highlighting
+)
 
 # go-install <name of src to install>
 go-install(){
@@ -22,22 +25,38 @@ push-ansible-subtree(){
   git subtree push --prefix=$1/ansible shared-ansible master
 }
 
+set-dc-env(){
+  eval $(docker-machine env $1)
+}
+
+with-time(){
+  $1 |  ts '[%Y-%m-%d %H:%M:%S]'
+}
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
+export PATH="/usr/local/CrossPack-AVR/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
+export PATH="$HOME/.rbenv/bin:$PATH"
+export ANDROID_HOME=/usr/local/opt/android-sdk
+export AWS_CONFIG_FILE=$HOME/.aws/config
 
 source $ZSH/oh-my-zsh.sh
 
 alias code="~/code"
 alias doc="~/Documents"
-alias dk=docker
-alias dc=docker-compose
-alias kbl=kubectl
 
+alias dm='docker-machine'
+alias dc='docker-compose'
+alias dk='docker'
+alias kbl=kubectl
+alias jsonnet='docker run --rm -it -v `pwd`:/src innyso/jsonnet jsonnet'
+alias tf='terraform'
+alias cleanme='du -h -d 1 | gsort -r -h'
 # Initialize colors.
 autoload -U colors
 colors
  
+bindkey -v
+
 # Allow for functions in the prompt.
 setopt PROMPT_SUBST
  
@@ -57,3 +76,23 @@ chpwd_functions+='chpwd_update_git_vars'
 
 PROMPT=$'%{${fg[white]}%}$(get_pwd)%b$(prompt_git_info)%{${fg[default]}%} '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+precmd() {
+  RPROMPT=""
+}
+zle-keymap-select() {
+  RPROMPT=""
+  [[ $KEYMAP = vicmd ]] && RPROMPT="%{${fg[blue]}%}%B%\[CMD]%b"
+  () { return $__prompt_status }
+  zle reset-prompt
+}
+zle-line-init() {
+  typeset -g __prompt_status="$?"
+}
+zle -N zle-keymap-select
+zle -N zle-line-init
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+
+eval "$(rbenv init -)"
