@@ -74,7 +74,7 @@ preexec_functions+='preexec_update_git_vars'
 precmd_functions+='precmd_update_git_vars'
 chpwd_functions+='chpwd_update_git_vars'
 
-PROMPT=$'%{${fg[white]}%}$(get_pwd)%b$(prompt_git_info)%{${fg[default]}%} '
+PROMPT=$'%{${fg[white]}%}%B%~%b$(prompt_git_info)%{${fg[default]}%} '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 precmd() {
   RPROMPT=""
@@ -96,3 +96,7 @@ bindkey -M vicmd v edit-command-line
 
 
 eval "$(rbenv init -)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
