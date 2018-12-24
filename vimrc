@@ -1,9 +1,16 @@
 call plug#begin('~/.vim/plugged')
-Plug 'othree/yajs.vim'
-call plug#end()
 
-call pathogen#infect()
-call pathogen#helptags()
+Plug 'othree/yajs.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'iberianpig/tig-explorer.vim'
+Plug 'nvie/vim-flake8'
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+call plug#end()
 
 set encoding=utf8
 set termencoding=utf8
@@ -124,11 +131,18 @@ let g:airline_powerline_fonts = 1
 " git related stuff
 map <LocalLeader>gw :Gwrite<CR><CR>
 map <LocalLeader>gs :Gstatus<CR>
-map <LocalLeader>gv :GV<CR>
 map <LocalLeader>gc :Gcommit<CR>
-map <LocalLeader>gp :Gpush origin master<CR>
+map <LocalLeader>gu :Gpush origin master<CR>
+map <LocalLeader>gp :Gpull origin master<CR>
+map <LocalLeader>gv :TigOpenProjectRootDir<CR>
 
 " markdown preview setting
 let vim_markdown_preview_github=1
 let vim_markdown_preview_toggle=2
 let vim_markdown_preview_browser='Google Chrome'
+
+" fzf
+map <C-P> :FZF<CR>
+
+" python stuff
+autocmd BufWritePost *.py call Flake8()
