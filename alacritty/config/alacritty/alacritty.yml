@@ -30,7 +30,7 @@ window:
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
-  decorations: true
+  decorations: full
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 2
@@ -74,10 +74,6 @@ font:
 
 # Should display the render timer
 render_timer: false
-
-# Use custom cursor colors. If true, display the cursor in the cursor.foreground
-# and cursor.background colors, otherwise invert the colors of the cursor.
-custom_cursor_colors: false
 
 # Colors (Tomorrow Night Bright)
 colors:
@@ -172,14 +168,16 @@ mouse:
   # scrolling for applications like `man`.
   #
   # To disable this completely, set `faux_scrollback_lines` to 0.
-  faux_scrollback_lines: 1
+  faux_scrolling_lines: 1
+
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: false
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
 dynamic_title: true
 
-hide_cursor_when_typing: false
 
 # Style of the cursor
 #
@@ -187,7 +185,7 @@ hide_cursor_when_typing: false
 # - Block
 # - Underline
 # - Beam
-cursor_style: Block
+cursor.style: Block
 
 # Live config reload (changes require restart)
 live_config_reload: true
@@ -201,9 +199,9 @@ live_config_reload: true
 #   program: /bin/bash
 #   args:
 #     - --login
-shell:
-  program: login
-  args: ["-fp", <loginName>]
+#shell:
+#  program: login
+#  args: ["-fp", $USERNAME]
 
 # Key bindings
 #
