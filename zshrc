@@ -36,8 +36,8 @@ with-time(){
 
 export PATH="/usr/local/CrossPack-AVR/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
 export PATH="$HOME/.rbenv/bin:$PATH"
-export ANDROID_HOME=/usr/local/opt/android-sdk
 export AWS_CONFIG_FILE=$HOME/.aws/config
+export HISTFILESIZE=10000
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,10 +93,8 @@ zle -N zle-line-init
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
+bindkey '^M' autosuggest-execute
+bindkey '^@' autosuggest-clear
 
-
-eval "$(rbenv init -)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=248'
+ZSH_TMUX_AUTOSTART=true
