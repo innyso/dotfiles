@@ -1,3 +1,6 @@
+# Start tmux by default
+# if [ "$TMUX" = "" ]; then tmux; fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/iso/.oh-my-zsh
 
@@ -13,6 +16,7 @@ plugins=(
   fzf-zsh
   zsh-autosuggestions
   kubectl
+  tmux
 )
 
 # go-install <name of src to install>
