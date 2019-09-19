@@ -10,6 +10,9 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   zsh-syntax-highlighting
+  fzf-zsh
+  zsh-autosuggestions
+  kubectl
 )
 
 # go-install <name of src to install>
@@ -32,6 +35,11 @@ set-dc-env(){
 with-time(){
   $1 |  ts '[%Y-%m-%d %H:%M:%S]'
 }
+
+find-big-dir(){
+  du -a $1 | sort -n -r | head -n 10
+}
+
 # User configuration
 
 export PATH="/usr/local/CrossPack-AVR/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin"
@@ -47,10 +55,11 @@ alias doc="~/Documents"
 alias dm='docker-machine'
 alias dc='docker-compose'
 alias dk='docker'
-alias kbl=kubectl
+alias k=kubectl
 alias jsonnet='docker run --rm -it -v `pwd`:/src innyso/jsonnet jsonnet'
 alias tf='terraform'
 alias cleanme='du -h -d 1 | gsort -r -h'
+alias outofspace='du -a $1 | sort -n -r | head -n 10'
 # Initialize colors.
 autoload -U colors
 colors
