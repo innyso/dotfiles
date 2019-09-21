@@ -90,6 +90,9 @@ map <LocalLeader>s! 1z=
 
 " q: sucks
 nmap q: :q
+noremap <leader>q :q<cr>
+" :wq
+noremap <leader>wq :wq<cr>
 " If I forgot to sudo vim a file, do that with :w!!
 cmap w!! w !sudo tee %
 
@@ -101,7 +104,10 @@ map <C-l> <C-W>l
 noremap <C-n> :tabnext<CR>
 set guicursor=a:block-blinkoff1
 
-" Use 2 spaces in puppet, ruby and xml files
+" control size of split
+nnoremap <C-a> <C-w>>
+nnoremap <C-d> <C-w>=
+nnoremap <C-s-f> <C-w>\|
 
 " Open and close the NERDTree
 map <LocalLeader>t :NERDTreeToggle<CR>
