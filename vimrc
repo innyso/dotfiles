@@ -140,7 +140,9 @@ map <LocalLeader>gs :Gstatus<CR>
 map <LocalLeader>gc :Gcommit<CR>
 map <LocalLeader>gu :Gpush origin master<CR>
 map <LocalLeader>gp :Gpull origin master<CR>
-map <LocalLeader>gv :TigOpenProjectRootDir<CR>
+
+" Tig
+nnoremap <LocalLeader>gv :Tig<CR>
 
 " markdown preview setting
 let vim_markdown_preview_github=1
