@@ -12,9 +12,7 @@ ZSH_THEME="robbyrussell"
 
 plugins=(
   git
-  zsh-syntax-highlighting
-  fzf-zsh
-  zsh-autosuggestions
+  fzf
   kubectl
   tmux
 )
@@ -106,8 +104,5 @@ zle -N zle-line-init
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
-bindkey '^M' autosuggest-execute
-bindkey '^@' autosuggest-clear
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=248'
 ZSH_TMUX_AUTOSTART=true
