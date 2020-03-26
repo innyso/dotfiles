@@ -1,5 +1,7 @@
-# Start tmux by default
-if [ "$TMUX" = "" ]; then tmux; fi
+# dont nested session
+if [[ ! "$TERM" =~ "screen-256color" ]]; then
+  tmux attach -t default || tmux new -s default
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/iso/.oh-my-zsh
@@ -104,5 +106,3 @@ zle -N zle-line-init
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
-
-ZSH_TMUX_AUTOSTART=true
