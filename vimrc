@@ -7,6 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'iberianpig/tig-explorer.vim'
 Plug 'nvie/vim-flake8'
+Plug 'hashivim/vim-terraform'
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
@@ -154,3 +155,6 @@ map <C-P> :FZF<CR>
 
 " python stuff
 autocmd BufWritePost *.py call Flake8()
+
+" terraform
+let g:terraform_fmt_on_save=1
