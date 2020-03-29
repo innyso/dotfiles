@@ -5,6 +5,7 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/iso/.oh-my-zsh
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -64,6 +65,7 @@ alias jsonnet='docker run --rm -it -v `pwd`:/src innyso/jsonnet jsonnet'
 alias tf='terraform'
 alias cleanme='du -h -d 1 | gsort -r -h'
 alias outofspace='du -a $1 | sort -n -r | head -n 10'
+alias stl=sentinel
 # Initialize colors.
 autoload -U colors
 colors
@@ -106,3 +108,5 @@ zle -N zle-line-init
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
+
+[[ -f /Users/iso/.sentinel/current/bin/sentinel ]] && eval "$(/Users/iso/.sentinel/current/bin/sentinel init -)"
