@@ -8,6 +8,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'iberianpig/tig-explorer.vim'
 Plug 'nvie/vim-flake8'
 Plug 'hashivim/vim-terraform'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+
+" snippet for ultisnips
+Plug 'honza/vim-snippets'
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
@@ -158,3 +163,6 @@ autocmd BufWritePost *.py call Flake8()
 
 " terraform
 let g:terraform_fmt_on_save=1
+
+" ultisnips
+let g:UltiSnipsExpandTrigger=";"
