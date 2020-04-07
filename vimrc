@@ -117,6 +117,7 @@ nnoremap <C-s-f> <C-w>\|
 
 " Open and close the NERDTree
 map <LocalLeader>t :NERDTreeToggle<CR>
+map <LocalLeader>f :NERDTreeFind<CR>
 let NERDTreeWinPos="left"
 let NERDTreeWinSize=20
 
