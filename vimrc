@@ -120,6 +120,7 @@ map <LocalLeader>t :NERDTreeToggle<CR>
 map <LocalLeader>f :NERDTreeFind<CR>
 let NERDTreeWinPos="left"
 let NERDTreeWinSize=20
+let NERDTreeShowHidden=1
 
 " CtrlP - fuzzy search
 let g:ctrlp_map = '<c-p>'
