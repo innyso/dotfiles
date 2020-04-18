@@ -1,0 +1,5 @@
+bind main a !?git commit --amend
+
+bind status w !?git push origin -u
+
+bind refs C ?!sh -c "git checkout %(branch) && git branch -u origin/%(branch)"

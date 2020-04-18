@@ -143,14 +143,12 @@ nmap <LocalLeader>c  :%foldclose!<cr>
 let g:airline_powerline_fonts = 1
 
 " git related stuff
-map <LocalLeader>gw :Gwrite<CR><CR>
-map <LocalLeader>gs :Gstatus<CR>
-map <LocalLeader>gc :Gcommit<CR>
-map <LocalLeader>gu :Gpush origin master<CR>
-map <LocalLeader>gp :Gpull origin master<CR>
+map <LocalLeader>gp :Gpull <CR>
 
 " Tig
-nnoremap <LocalLeader>gv :Tig<CR>
+nnoremap <LocalLeader>gs :Tig status<CR>
+nnoremap <LocalLeader>gl :Tig <CR>
+
 
 " markdown preview setting
 let vim_markdown_preview_github=1
