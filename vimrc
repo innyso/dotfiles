@@ -166,3 +166,15 @@ let g:terraform_fmt_on_save=1
 
 " ultisnips
 let g:UltiSnipsExpandTrigger=";"
+
+" lightline
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
