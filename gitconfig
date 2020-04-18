@@ -4,3 +4,5 @@
 	default = current
 [branch]
   autosetupmerge = always
+[alias]
+  co = "!f() { git checkout $1 && git branch -u origin/$1; }; f"
