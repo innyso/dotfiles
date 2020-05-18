@@ -108,5 +108,3 @@ zle -N zle-line-init
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
-
-[[ -f /Users/iso/.sentinel/current/bin/sentinel ]] && eval "$(/Users/iso/.sentinel/current/bin/sentinel init -)"
