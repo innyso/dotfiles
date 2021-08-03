@@ -8,13 +8,15 @@ Plug 'tpope/vim-fugitive'
 Plug 'iberianpig/tig-explorer.vim'
 Plug 'nvie/vim-flake8'
 Plug 'hashivim/vim-terraform'
-Plug 'ycm-core/YouCompleteMe'
-Plug 'SirVer/ultisnips'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" snippet for ultisnips
-Plug 'honza/vim-snippets'
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" javascript and reactjs
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 call plug#end()
 
@@ -164,9 +166,6 @@ autocmd BufWritePost *.py call Flake8()
 " terraform
 let g:terraform_fmt_on_save=1
 
-" ultisnips
-let g:UltiSnipsExpandTrigger=";"
-
 " lightline
 let g:lightline = {
       \ 'colorscheme': 'nord',
@@ -178,3 +177,29 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
+
+" javascript prettier
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
+" coc
+
+" ctrl-space to select, ctrl-n and ctrl-n and ctrl-m to navigate up and down
+" the list
+inoremap <expr> <c-@> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"inoremap <expr> <c-@> pumvisible() ? coc#_select_confirm() : coc#refresh()
+inoremap <expr> <c-j> pumvisible() ? "\<C-n>" : coc#refresh()
+let g:coc_snippet_next = '<c-l>'
+let g:coc_snippet_prev = '<c-h>'
+
+" coc extensions
+let g:coc_global_extensions = [
+      \ 'coc-json',
+      \ 'coc-tsserver',
+      \ 'coc-prettier',
+      \ 'coc-eslint',
+      \ 'coc-yaml',
+      \ 'coc-python',
+      \ 'coc-html',
+      \ 'coc-snippets',
+      \ ]
