@@ -8,6 +8,7 @@ https://github.com/powerline/fonts
 Run `brew bundle`
 
 # vim on windows 
-install via `choco install vim`
-`.vimrc` can be found in `c:\tools\vim\_vimrc`
-Place `plug.vim` in `C:\tools\vim\vim82\autoload`
+
+- install via `choco install vim`
+- `.vimrc` can be found in `c:\tools\vim\_vimrc`
+- Place `plug.vim` in `C:\tools\vim\vim82\autoload`
