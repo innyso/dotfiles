@@ -12,6 +12,7 @@ Run `brew bundle`
 - install via `choco install vim`
 - `.vimrc` can be found in `c:\tools\vim\_vimrc`
 - Place `plug.vim` in `C:\tools\vim\vim82\autoload`
+- to find out where scripts are loaded from run `:scriptsnames`
 
 # Windows terminal setting
 - file location `%LOCALAPPDATA%\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`
