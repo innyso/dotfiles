@@ -53,9 +53,12 @@ export AWS_CONFIG_FILE=$HOME/.aws/config
 export HISTFILESIZE=10000
 
 source $ZSH/oh-my-zsh.sh
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 alias code="~/code"
 alias doc="~/Documents"
+alias notes="~/code/the-vault"
 
 alias dm='docker-machine'
 alias dc='docker-compose'
