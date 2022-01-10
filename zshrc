@@ -66,6 +66,7 @@ alias tf='terraform'
 alias cleanme='du -h -d 1 | gsort -r -h'
 alias outofspace='du -a $1 | sort -n -r | head -n 10'
 alias stl=sentinel
+alias new-tsc='cp -R ~/code/typescript-template/ .'
 # Initialize colors.
 autoload -U colors
 colors
