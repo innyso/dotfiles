@@ -36,3 +36,7 @@ map('n','<leader>t', ':NvimTreeToggle<CR>',{})
 
 -- telescope
 map('n', '<C-p>',':Telescope find_files<CR>',{})
+
+-- tig
+map('n', '<leader>gl', ':Tig<CR>', {})
+map('n', '<leader>gs', ':Tig status<CR>', {})
