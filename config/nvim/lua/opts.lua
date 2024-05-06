@@ -9,6 +9,7 @@ opt.swapfile = false
 opt.backup = false
 opt.undofile = true
 o.undolevels = 10000
+o.clipboard = 'unnamedplus'
 
 -- [[ Filetypes ]]
 opt.encoding = 'utf8'            -- str:  String encoding to use
