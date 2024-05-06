@@ -20,8 +20,20 @@ return require('packer').startup(function(use)
   use 'shaunsingh/nord.nvim'
   use 'iberianpig/tig-explorer.vim'
   use {                                              -- filesystem navigation
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons'        -- filesystem icons
+  'kyazdani42/nvim-tree.lua',
+  requires = 'kyazdani42/nvim-web-devicons',        -- filesystem icons
+  config = function() 
+    require('nvim-tree').setup({
+      view = {
+        width = 20,
+        signcolumn = "no"
+
+      },
+      filters = {
+        dotfiles = false
+      }
+    })
+  end,
   }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.6',
@@ -29,9 +41,16 @@ return require('packer').startup(function(use)
   }
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+    config = function()
+      require('lualine').setup({
+        options = {
+          theme = 'nord',
+          disabled_filetypes = { 'NvimTree', 'packer' }
+        }
+      })
+    end,
   }
-
 
   if packer_bootstrap then
     require('packer').sync()
