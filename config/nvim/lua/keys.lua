@@ -30,3 +30,9 @@ map('n', '<C-d>', '<C-w>=',{noremap = true})
 -- folds
 map('n', '<leader>d', ':%foldopen!<CR>', { desc = 'open all folds'})
 map('n', '<leader>c', ':%foldclose!<CR>', { desc = 'close all folds'})
+
+-- nvim-tree
+map('n','<leader>t', ':NvimTreeToggle<CR>',{})
+
+-- telescope
+map('n', '<C-p>',':Telescope find_files<CR>',{})

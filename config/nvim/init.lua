@@ -4,7 +4,7 @@
 vim.g.mapleader = ","
 vim.g.localleader = ","
 
--- PLUGINS: Add this section
+-- PLUGINS: setup
 require('nvim-tree').setup({
   view = {
     width = 20,
@@ -20,6 +20,13 @@ vim.g.nord_contrast = true
 vim.g.nord_disable_background = true
 require('nord').set()
 vim.cmd('colorscheme nord')
+
+require('lualine').setup{
+  options = {
+    theme = 'nord',
+    disabled_filetypes = { 'NvimTree', 'packer' }
+  }
+}
 
 -- IMPORTS
 require('vars')      -- Variables
