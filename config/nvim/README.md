@@ -19,4 +19,3 @@ Print variable value
 ```
 :=<var_name>
 ```
-
