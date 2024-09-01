@@ -21,5 +21,5 @@ Print variable value
 ```
 Install LSP 
 ```
-MasonInstall gopls
+:MasonInstall gopls
 ```
