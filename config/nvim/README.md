@@ -19,3 +19,7 @@ Print variable value
 ```
 :=<var_name>
 ```
+Install LSP 
+```
+MasonInstall gopls
+```
