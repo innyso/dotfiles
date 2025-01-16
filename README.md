@@ -16,3 +16,6 @@ Run `brew bundle`
 
 # Windows terminal setting
 - file location `%LOCALAPPDATA%\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`
+
+# Colima
+`cp colima/_templates/default.yaml ~/.colima/_templates/default.yaml`
