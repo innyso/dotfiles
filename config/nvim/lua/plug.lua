@@ -68,7 +68,24 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},
 		}
 	}
-
+   use {
+    'nvim-lua/plenary.nvim'
+  }
+  use {
+    'github/copilot.vim',
+    opts = {
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    },
+  }
+  use {
+    'CopilotC-Nvim/CopilotChat.nvim',
+    dependencies = {
+      { 'nvim-lua/plenary.nvim' },
+      { 'github/copilot.vim' },  -- Alternatively, use 'zbirenbaum/copilot.lua'
+    },
+    build = 'make tiktoken',  -- Only on macOS or Linux
+  }
   if packer_bootstrap then
     require('packer').sync()
   end
